@@ -44,6 +44,9 @@ public class VendorController {
 	
 	@GetMapping("/{id}")
 	public Vendor getVendor(@PathVariable("id") int id) {
+		
+		System.out.println(id);
+		System.out.println(vendorRepo.findById(id));
 		return vendorRepo.findById(id).get();
 	}
 	
