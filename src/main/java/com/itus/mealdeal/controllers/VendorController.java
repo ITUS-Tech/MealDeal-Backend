@@ -25,12 +25,12 @@ public class VendorController {
 	@Autowired
 	VendorRepository vendorRepo;
 	
-	@PostMapping("/")
-	public void addVendor(@RequestBody Vendor vendor) {
-		vendorRepo.save(vendor);
-	}
-	
-	@GetMapping("/")
+//	@PostMapping("")
+//	public void addVendor(@RequestBody Vendor vendor) {
+//		vendorRepo.save(vendor);
+//	}
+//	
+	@GetMapping("")
 	public List<Vendor> getAllVendor() {
 		List<Vendor> list= new ArrayList<>();
 		vendorRepo.findAll().stream().forEach(list::add);
