@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.itus.mealdeal.models.User;
 import com.itus.mealdeal.repos.UserRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user")
 public class UserController {

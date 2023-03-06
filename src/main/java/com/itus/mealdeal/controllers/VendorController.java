@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.itus.mealdeal.models.Vendor;
 import com.itus.mealdeal.repos.VendorRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/vendor")
 public class VendorController {
@@ -34,6 +34,7 @@ public class VendorController {
 	public List<Vendor> getAllVendor() {
 		List<Vendor> list= new ArrayList<>();
 		vendorRepo.findAll().stream().forEach(list::add);
+		System.out.println(list);
 		return list;
 	}
 	

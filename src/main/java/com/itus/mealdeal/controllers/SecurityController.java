@@ -21,7 +21,7 @@ import com.itus.mealdeal.repos.IdgenRepository;
 import com.itus.mealdeal.repos.UserRepository;
 import com.itus.mealdeal.repos.VendorRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 public class SecurityController {
 	

@@ -19,7 +19,7 @@ import com.itus.mealdeal.models.Vendor;
 import com.itus.mealdeal.repos.CartRepository;
 import com.itus.mealdeal.repos.VendorRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/cart")
 public class CartController {
@@ -42,6 +42,7 @@ public class CartController {
 	
 	@GetMapping("/{userId}")
 	public Cart getCart(@PathVariable("userId") int userId) {
+		System.out.println(userId);
 		return cartRepo.findById(userId).get();
 	}
 	
