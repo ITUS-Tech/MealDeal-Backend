@@ -34,6 +34,7 @@ public class CartController {
 	@PutMapping("/reset/{userId}")
 	public void resetCart(@PathVariable("userId") int userId) {
 		Cart cart= cartRepo.findById(userId).get();
+		cart.setVendorId(0);
 		cart.setVendorName("");
 		cart.setItems(new ArrayList<>());
 		cart.setTotalPrice(0);

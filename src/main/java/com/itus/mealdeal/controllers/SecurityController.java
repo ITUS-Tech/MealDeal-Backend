@@ -76,6 +76,6 @@ public class SecurityController {
 	}
 	
 	public void createCart(@PathVariable("userId") int userId) {
-		cartRepo.save(new Cart(userId, null, new ArrayList<>(), 0));
+		cartRepo.save(new Cart(userId, 0, null, new ArrayList<>(), 0));
 	}
 }
