@@ -9,6 +9,6 @@ import com.itus.mealdeal.models.Order;
 
 @Repository
 public interface OrderRepository extends MongoRepository<Order, Integer>{
-	List<Order> findByUserId(int userId);
-	List<Order> findByVendorId(int vendorId);
+	List<Order> findAllByUserId(int userId);
+	List<Order> findAllByVendorId(int vendorId);
 }
