@@ -37,7 +37,7 @@ public class OrderController {
 		return orderRepo.findAllByVendorId(id);
 	}
 	
-	@PostMapping("")
+	@PostMapping("/add")
 	public int createOrder(@RequestBody Order order) {
 		User user= userRepo.findById(order.getUserId()).get();
 		IdGenerator id= idRepo.findById("idgen").get();

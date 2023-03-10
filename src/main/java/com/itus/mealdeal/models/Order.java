@@ -11,7 +11,7 @@ public class Order {
 	private int vendorId;
 	private String customerName;
 	private String VendorName;
-	private List<Plan> plans;
+	private List<CartItem> plans;
 	private double totalAmount;
 	private String address;
 	private String phone;
@@ -21,7 +21,7 @@ public class Order {
 		super();
 	}
 
-	public Order(int id, int userId, int vendorId, String customerName, String vendorName, List<Plan> plans,
+	public Order(int id, int userId, int vendorId, String customerName, String vendorName, List<CartItem> plans,
 			double totalAmount, String address, String phone, String email) {
 		super();
 		this.id = id;
@@ -76,11 +76,11 @@ public class Order {
 		VendorName = vendorName;
 	}
 
-	public List<Plan> getPlans() {
+	public List<CartItem> getPlans() {
 		return plans;
 	}
 
-	public void setPlans(List<Plan> plans) {
+	public void setPlans(List<CartItem> plans) {
 		this.plans = plans;
 	}
 
