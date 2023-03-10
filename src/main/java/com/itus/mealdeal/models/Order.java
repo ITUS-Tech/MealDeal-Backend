@@ -9,7 +9,8 @@ public class Order {
 	private int id;
 	private int userId;
 	private int vendorId;
-	private String name;
+	private String customerName;
+	private String VendorName;
 	private List<Plan> plans;
 	private double totalAmount;
 	private String address;
@@ -20,13 +21,14 @@ public class Order {
 		super();
 	}
 
-	public Order(int id, int userId, int vendorId, String name, List<Plan> plans, double totalAmount, String address,
-			String phone, String email) {
+	public Order(int id, int userId, int vendorId, String customerName, String vendorName, List<Plan> plans,
+			double totalAmount, String address, String phone, String email) {
 		super();
 		this.id = id;
 		this.userId = userId;
 		this.vendorId = vendorId;
-		this.name = name;
+		this.customerName = customerName;
+		VendorName = vendorName;
 		this.plans = plans;
 		this.totalAmount = totalAmount;
 		this.address = address;
@@ -45,7 +47,11 @@ public class Order {
 	public int getUserId() {
 		return userId;
 	}
-	
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public int getVendorId() {
 		return vendorId;
 	}
@@ -54,16 +60,20 @@ public class Order {
 		this.vendorId = vendorId;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public String getCustomerName() {
+		return customerName;
 	}
 
-	public String getName() {
-		return name;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getVendorName() {
+		return VendorName;
+	}
+
+	public void setVendorName(String vendorName) {
+		VendorName = vendorName;
 	}
 
 	public List<Plan> getPlans() {
@@ -108,7 +118,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", userId=" + userId + ", name=" + name + ", plans=" + plans + ", totalAmount="
-				+ totalAmount + ", address=" + address + ", phone=" + phone + ", email=" + email + "]";
+		return "Order [id=" + id + ", userId=" + userId + ", vendorId=" + vendorId + ", customerName=" + customerName
+				+ ", VendorName=" + VendorName + ", plans=" + plans + ", totalAmount=" + totalAmount + ", address="
+				+ address + ", phone=" + phone + ", email=" + email + "]";
 	}
 }
