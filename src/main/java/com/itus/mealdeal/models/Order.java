@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Order {
 	private int id;
 	private int userId;
+	private int vendorId;
 	private String name;
 	private List<Plan> plans;
 	private double totalAmount;
@@ -19,11 +20,12 @@ public class Order {
 		super();
 	}
 
-	public Order(int id, int userId, String name, List<Plan> plans, double totalAmount, String address, String phone,
-			String email) {
+	public Order(int id, int userId, int vendorId, String name, List<Plan> plans, double totalAmount, String address,
+			String phone, String email) {
 		super();
 		this.id = id;
 		this.userId = userId;
+		this.vendorId = vendorId;
 		this.name = name;
 		this.plans = plans;
 		this.totalAmount = totalAmount;
@@ -42,6 +44,14 @@ public class Order {
 
 	public int getUserId() {
 		return userId;
+	}
+	
+	public int getVendorId() {
+		return vendorId;
+	}
+
+	public void setVendorId(int vendorId) {
+		this.vendorId = vendorId;
 	}
 
 	public void setUserId(int userId) {

@@ -20,8 +20,8 @@ public class OrderController {
 	@Autowired
 	OrderRepository orderRepo;
 	
-	@GetMapping("/{id}")
-	public List<Order> getAllUserOrders(@PathVariable("id") int id){
+	@GetMapping("/{userId}")
+	public List<Order> getAllVendorOrders(@PathVariable("userId") int id){
 		return orderRepo.findByUserId(id);
 		
 	}
