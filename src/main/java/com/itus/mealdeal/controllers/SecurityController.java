@@ -45,7 +45,7 @@ public class SecurityController {
 		List<User> users= new ArrayList<>();
 		userRepo.findAll().stream().forEach(users::add);
 		for(User user: users) {
-			if(user.getEmail().compareTo(authRequest.getUsername())==0) {
+			if(user.getEmail().compareTo(authRequest.getEmail())==0) {
 				if(user.getPassword().compareTo(authRequest.getPassword())==0)
 					return user.getId();
 				else
