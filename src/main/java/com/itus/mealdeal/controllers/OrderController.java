@@ -37,7 +37,7 @@ public class OrderController {
 		return orderRepo.findAllByVendorId(id);
 	}
 	
-	@GetMapping("/{userId}")
+	@GetMapping("/user/{userId}")
 	public List<Order> getAllUserOrders(@PathVariable("userId") int id){
 		return orderRepo.findAllByUserId(id);
 	}
