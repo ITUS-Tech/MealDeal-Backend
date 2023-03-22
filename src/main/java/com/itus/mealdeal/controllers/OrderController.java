@@ -32,9 +32,14 @@ public class OrderController {
 	@Autowired
 	IdgenRepository	idRepo;
 	
-	@GetMapping("/{userId}")
-	public List<Order> getAllVendorOrders(@PathVariable("userId") int id){
+	@GetMapping("/{vendorId}")
+	public List<Order> getAllVendorOrders(@PathVariable("vendorId") int id){
 		return orderRepo.findAllByVendorId(id);
+	}
+	
+	@GetMapping("/{userId}")
+	public List<Order> getAllUserOrders(@PathVariable("userId") int id){
+		return orderRepo.findAllByUserId(id);
 	}
 	
 	@PostMapping("/add")
