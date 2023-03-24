@@ -10,7 +10,7 @@ public class Order {
 	private int userId;
 	private int vendorId;
 	private String customerName;
-	private String VendorName;
+	private String vendorName;
 	private List<CartItem> plans;
 	private double totalAmount;
 	private String address;
@@ -28,7 +28,7 @@ public class Order {
 		this.userId = userId;
 		this.vendorId = vendorId;
 		this.customerName = customerName;
-		VendorName = vendorName;
+		this.vendorName = vendorName;
 		this.plans = plans;
 		this.totalAmount = totalAmount;
 		this.address = address;
@@ -69,11 +69,11 @@ public class Order {
 	}
 
 	public String getVendorName() {
-		return VendorName;
+		return vendorName;
 	}
 
 	public void setVendorName(String vendorName) {
-		VendorName = vendorName;
+		this.vendorName = vendorName;
 	}
 
 	public List<CartItem> getPlans() {
@@ -119,7 +119,7 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", userId=" + userId + ", vendorId=" + vendorId + ", customerName=" + customerName
-				+ ", VendorName=" + VendorName + ", plans=" + plans + ", totalAmount=" + totalAmount + ", address="
+				+ ", vendorName=" + vendorName + ", plans=" + plans + ", totalAmount=" + totalAmount + ", address="
 				+ address + ", phone=" + phone + ", email=" + email + "]";
 	}
 }
