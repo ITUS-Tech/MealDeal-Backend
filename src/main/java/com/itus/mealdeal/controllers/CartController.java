@@ -62,6 +62,8 @@ public class CartController {
 	@PutMapping("/add/{userId}")
 	public void addToCart(@PathVariable("userId") int userId, @RequestBody Cart cart) {
 		Cart currentCart= getCart(userId);
+		currentCart.setVendorId(cart.getVendorId());
+		currentCart.setVendorName(cart.getVendorName());
 		List<CartItem> currentItems= currentCart.getItems();
 		currentItems.add(cart.getItems().get(0));
 		currentCart.setTotalPrice(currentCart.getTotalPrice()+(cart.getItems().get(0).getPrice()*cart.getItems().get(0).getQuantity()));
