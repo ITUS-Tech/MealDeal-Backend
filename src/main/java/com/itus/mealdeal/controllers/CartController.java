@@ -1,6 +1,7 @@
 package com.itus.mealdeal.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -61,6 +62,10 @@ public class CartController {
 	@PutMapping("/add/{userId}")
 	public void addToCart(@PathVariable("userId") int userId, @RequestBody Cart cart) {
 		Cart currentCart= getCart(userId);
+		List<CartItem> currentItems= currentCart.getItems();
+		currentItems.add(cart.getItems().get(0));
+		currentCart.setTotalPrice(currentCart.getTotalPrice()+(cart.getItems().get(0).getPrice()*cart.getItems().get(0).getQuantity()));
+		cartRepo.save(currentCart);
 	}
 	
 }
