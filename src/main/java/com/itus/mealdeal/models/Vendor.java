@@ -12,12 +12,12 @@ public class Vendor {
 	private String image;
 	private String vendorName;
 	private String address;
-	private Map<String, String> menu = new HashMap<String, String>();
-	private Map<String, Integer> prices = new HashMap<String, Integer>();
+	private String menu;
+	private Map<String, Integer> prices;
 	
 	public Vendor() {}
 
-	public Vendor(int id, String image, String vendorName, String address, Map<String, String> menu, Map<String, Integer> prices) {
+	public Vendor(int id, String image, String vendorName, String address, String menu, Map<String, Integer> prices) {
 		super();
 		this.id = id;
 		this.image = image;
@@ -59,11 +59,11 @@ public class Vendor {
 		this.address = address;
 	}
 
-	public Map<String, String> getMenu() {
+	public String getMenu() {
 		return menu;
 	}
 
-	public void setMenu(Map<String, String> menu) {
+	public void setMenu(String menu) {
 		this.menu = menu;
 	}
 

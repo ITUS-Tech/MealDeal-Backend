@@ -47,8 +47,8 @@ public class CartController {
 		return cartRepo.findById(userId).get();
 	}
 	
-	@PutMapping("/add/{userId}")
-	public void addToCart(@PathVariable("userId") int userId, @RequestBody Cart cart) {
+	@PutMapping("/edit/{userId}")
+	public void editQuantity(@PathVariable("userId") int userId, @RequestBody Cart cart) {
 		double total=0;
 		for(CartItem cartItem: cart.getItems()) {
 			total+=cartItem.getPrice()*cartItem.getQuantity();
@@ -56,6 +56,11 @@ public class CartController {
 		cart.setTotalPrice(total);
 		System.out.println(cart);
 		cartRepo.save(cart);
+	}
+	
+	@PutMapping("/add/{userId}")
+	public void addToCart(@PathVariable("userId") int userId, @RequestBody Cart cart) {
+		Cart currentCart= getCart(userId);
 	}
 	
 }

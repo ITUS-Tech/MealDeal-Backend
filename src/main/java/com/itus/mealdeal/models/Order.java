@@ -11,6 +11,8 @@ public class Order {
 	private int vendorId;
 	private String customerName;
 	private String VendorName;
+	private String startDate;
+	private String endDate;
 	private List<CartItem> plans;
 	private double totalAmount;
 	private String address;
@@ -19,16 +21,18 @@ public class Order {
 	
 	public Order() {
 		super();
-	}
+	}	
 
-	public Order(int id, int userId, int vendorId, String customerName, String vendorName, List<CartItem> plans,
-			double totalAmount, String address, String phone, String email) {
+	public Order(int id, int userId, int vendorId, String customerName, String vendorName, String startDate,
+			String endDate, List<CartItem> plans, double totalAmount, String address, String phone, String email) {
 		super();
 		this.id = id;
 		this.userId = userId;
 		this.vendorId = vendorId;
 		this.customerName = customerName;
 		VendorName = vendorName;
+		this.startDate = startDate;
+		this.endDate = endDate;
 		this.plans = plans;
 		this.totalAmount = totalAmount;
 		this.address = address;
@@ -76,6 +80,22 @@ public class Order {
 		VendorName = vendorName;
 	}
 
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 	public List<CartItem> getPlans() {
 		return plans;
 	}
@@ -119,7 +139,8 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", userId=" + userId + ", vendorId=" + vendorId + ", customerName=" + customerName
-				+ ", VendorName=" + VendorName + ", plans=" + plans + ", totalAmount=" + totalAmount + ", address="
-				+ address + ", phone=" + phone + ", email=" + email + "]";
+				+ ", VendorName=" + VendorName + ", startDate=" + startDate + ", endDate=" + endDate + ", plans="
+				+ plans + ", totalAmount=" + totalAmount + ", address=" + address + ", phone=" + phone + ", email="
+				+ email + "]";
 	}
 }
