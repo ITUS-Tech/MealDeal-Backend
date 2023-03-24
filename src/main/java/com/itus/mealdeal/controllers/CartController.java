@@ -50,12 +50,6 @@ public class CartController {
 	
 	@PutMapping("/edit/{userId}")
 	public void editQuantity(@PathVariable("userId") int userId, @RequestBody Cart cart) {
-		double total=0;
-		for(CartItem cartItem: cart.getItems()) {
-			total+=cartItem.getPrice()*cartItem.getQuantity();
-		}
-		cart.setTotalPrice(total);
-		System.out.println(cart);
 		cartRepo.save(cart);
 	}
 	

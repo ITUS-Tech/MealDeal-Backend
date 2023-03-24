@@ -12,20 +12,15 @@ public class Cart {
 	private int userId;
 	private int vendorId;
 	private String vendorName;
-	private String startDate;
-	private String endDate;
 	private List<CartItem> items;
 	private double totalPrice;
 	public Cart() {}
 
-	public Cart(int userId, int vendorId, String vendorName, String startDate, String endDate, List<CartItem> items,
-			double totalPrice) {
+	public Cart(int userId, int vendorId, String vendorName, List<CartItem> items, double totalPrice) {
 		super();
 		this.userId = userId;
 		this.vendorId = vendorId;
 		this.vendorName = vendorName;
-		this.startDate = startDate;
-		this.endDate = endDate;
 		this.items = items;
 		this.totalPrice = totalPrice;
 	}
@@ -54,22 +49,6 @@ public class Cart {
 		this.vendorName = vendorName;
 	}
 
-	public String getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
 	public List<CartItem> getItems() {
 		return items;
 	}
@@ -88,7 +67,7 @@ public class Cart {
 
 	@Override
 	public String toString() {
-		return "Cart [userId=" + userId + ", vendorId=" + vendorId + ", vendorName=" + vendorName + ", startDate="
-				+ startDate + ", endDate=" + endDate + ", items=" + items + ", totalPrice=" + totalPrice + "]";
+		return "Cart [userId=" + userId + ", vendorId=" + vendorId + ", vendorName=" + vendorName + ", items=" + items
+				+ ", totalPrice=" + totalPrice + "]";
 	}
 }

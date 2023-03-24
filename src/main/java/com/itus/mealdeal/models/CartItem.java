@@ -3,24 +3,44 @@ package com.itus.mealdeal.models;
 public class CartItem {
 	
 	private String subscription;
+	private String startDate;
+	private String endDate;
 	private double price;
 	private double quantity;
 	
 	public CartItem() {}
-	
-	public CartItem(String subscription, double price, double quantity) {
+
+	public CartItem(String subscription, String startDate, String endDate, double price, double quantity) {
 		super();
 		this.subscription = subscription;
+		this.startDate = startDate;
+		this.endDate = endDate;
 		this.price = price;
 		this.quantity = quantity;
 	}
 
-	public String getsubscription() {
+	public String getSubscription() {
 		return subscription;
 	}
 
-	public void setsubscription(String subscription) {
+	public void setSubscription(String subscription) {
 		this.subscription = subscription;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 
 	public double getPrice() {
@@ -41,6 +61,8 @@ public class CartItem {
 
 	@Override
 	public String toString() {
-		return "CartItem [subscription=" + subscription + ", price=" + price + ", quantity=" + quantity + "]";
+		return "CartItem [subscription=" + subscription + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", price=" + price + ", quantity=" + quantity + "]";
 	}
+	
 }
