@@ -6,5 +6,5 @@ import com.itus.mealdeal.models.User;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, Integer>{
-
+	public User findByEmail(String email);
 }
