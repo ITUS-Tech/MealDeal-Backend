@@ -100,8 +100,8 @@ public class SecurityController {
 			return null;
 		IdGenerator id= idRepo.findById("idgen").get();
 		user.setId(id.getIdcount());
-//		System.out.println(id);
-//		System.out.println(user);
+		System.out.println(id);
+		System.out.println(user);
 		System.out.println("registered "+user);
 		userRepo.save(user);
 		createCart(user.getId());
@@ -112,6 +112,8 @@ public class SecurityController {
 	}
 	
 	public void createCart(@PathVariable("userId") int userId) {
-		cartRepo.save(new Cart());
+		Cart cart= new Cart();
+		cart.setUserId(userId);
+		cartRepo.save(cart);
 	}
 }
