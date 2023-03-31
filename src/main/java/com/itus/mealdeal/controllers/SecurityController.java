@@ -114,6 +114,7 @@ public class SecurityController {
 	public void createCart(@PathVariable("userId") int userId) {
 		Cart cart= new Cart();
 		cart.setUserId(userId);
+		cart.setItems(new ArrayList<>());
 		cartRepo.save(cart);
 	}
 }
