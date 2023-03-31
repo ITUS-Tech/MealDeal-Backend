@@ -62,11 +62,20 @@ public class CartController {
 	@PutMapping("/add/{userId}")
 	public void addToCart(@PathVariable("userId") int userId, @RequestBody Cart cart) {
 		Cart currentCart= getCart(userId);
+		System.out.println("Current Cart");
+		for(CartItem item: cart.getItems())
+			System.out.println(item);
 		currentCart.setVendorId(cart.getVendorId());
 		currentCart.setVendorName(cart.getVendorName());
 		List<CartItem> currentItems= currentCart.getItems();
+		System.out.println("Cart");
+		for(CartItem item: cart.getItems())
+			System.out.println(item);
 		currentItems.add(cart.getItems().get(0));
 		currentCart.setItems(currentItems);
+		System.out.println("Current Cart");
+		for(CartItem item: cart.getItems())
+			System.out.println(item);
 		currentCart.setTotalPrice(currentCart.getTotalPrice()+(cart.getItems().get(0).getPrice()*cart.getItems().get(0).getQuantity()));
 		cartRepo.save(currentCart);
 	}
