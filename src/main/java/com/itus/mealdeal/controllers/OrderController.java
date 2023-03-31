@@ -1,5 +1,6 @@
 package com.itus.mealdeal.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itus.mealdeal.models.Cart;
 import com.itus.mealdeal.models.IdGenerator;
 import com.itus.mealdeal.models.Order;
 import com.itus.mealdeal.models.User;
+import com.itus.mealdeal.repos.CartRepository;
 import com.itus.mealdeal.repos.IdgenRepository;
 import com.itus.mealdeal.repos.OrderRepository;
 import com.itus.mealdeal.repos.UserRepository;
@@ -28,6 +31,9 @@ public class OrderController {
 	
 	@Autowired
 	UserRepository userRepo;
+	
+	@Autowired
+	CartRepository cartRepo;
 	
 	@Autowired
 	IdgenRepository	idRepo;
@@ -54,6 +60,10 @@ public class OrderController {
 		order.setPhone(user.getPhno());
 		order.setEmail(user.getEmail());
 		orderRepo.save(order);
+		Cart cart= new Cart();
+		cart.setUserId(order.getUserId());
+		cart.setItems(new ArrayList<>());
+		cartRepo.save(cart);
 		return order.getId();
 	}
 }
