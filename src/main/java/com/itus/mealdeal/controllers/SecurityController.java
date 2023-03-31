@@ -68,6 +68,7 @@ public class SecurityController {
 	
 	@PostMapping("/reset")
 	public void resetPassword(@RequestBody ResetPassword resetPass) {
+		
 		User user= userRepo.findByEmail(resetPass.getEmail());
 		user.setPassword(resetPass.getPassword());
 		userRepo.save(user);

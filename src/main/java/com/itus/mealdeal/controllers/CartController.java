@@ -66,6 +66,7 @@ public class CartController {
 		currentCart.setVendorName(cart.getVendorName());
 		List<CartItem> currentItems= currentCart.getItems();
 		currentItems.add(cart.getItems().get(0));
+		currentCart.setItems(currentItems);
 		currentCart.setTotalPrice(currentCart.getTotalPrice()+(cart.getItems().get(0).getPrice()*cart.getItems().get(0).getQuantity()));
 		cartRepo.save(currentCart);
 	}
