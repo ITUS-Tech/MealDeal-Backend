@@ -2,6 +2,7 @@ package com.itus.mealdeal.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -54,6 +55,11 @@ public class VendorController {
 	@DeleteMapping("/{id}")
 	public void deleteVendor(@PathVariable("id") int id) {
 		vendorRepo.deleteById(id);
+	}
+	
+	@GetMapping("/prices/{id}")
+	public Map<String, Integer> getPrices(@PathVariable("id") int id){
+		return vendorRepo.findById(id).get().getPrices();
 	}
 	
 }
